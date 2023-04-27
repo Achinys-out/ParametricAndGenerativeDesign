@@ -1,6 +1,6 @@
 # ParametricAndGenerativeDesign 
 
-![design1](https://user-images.githubusercontent.com/85788777/234936708-bddd678d-2ce4-4f8c-bd3a-090d28985bc4.png)
+![alt text](https://drive.google.com/file/d/1y0__dlcJT2QKJIZXfqek7ulwB27YZjz3/view?usp=sharing)
 
 
 This repository serves as a collection of parametreic and generative designs for Master's thesis about parametric and generative design for 3D modeling. 
