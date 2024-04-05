@@ -1,6 +1,6 @@
 p = 6;
 height = 10;
-rotate([-90,0,0])
+
 difference() {
     union(){
         for(j=[0:height]) {
