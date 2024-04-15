@@ -6,7 +6,7 @@ difference() {
     cube(size = size, center = true);
     for (i = [0: iterations-1]) {
 	    currentSize = size / pow(3, i);
-        smallSize = size / 3 / pow(3, i); 
+        smallSize = (size / 3) / pow(3, i); 
         innerLoopSize = (pow(3, i) - 1) / 2; 
         for (xLoop = [-innerLoopSize:innerLoopSize]) {
             for (yLoop = [-innerLoopSize:innerLoopSize]) {
