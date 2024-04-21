@@ -1,9 +1,7 @@
 module voronoiObject() {
     n = 22;             // number of points to generate - less = faster rendering, but less voronoid object, more = slower rendering, but mode voronoid object
     range = 32;         // main object radius
-    minVal = -range;    // start of range to generate points
-    maxVal = range;     // end of range to generate points
-    points = [for (i = [0 : 1 : n-1]) rands(minVal, maxVal, 3)]; // generating 3D points
+    points = points(n, -range, range); // generating 3D points
 
 //// exmaple1:
 //    difference() {
@@ -55,7 +53,9 @@ module pointsToVoronoiObjects(pts, range, spacing, rounded){
     }
 }
 
+// helper functions
 function distance(v) = sqrt((v[0] * v[0]) + (v[1] * v[1]) + (v[2] * v[2])); 
 function normalize(v) = v / (distance(v));
-
+function points(n, minVal, maxVal) = [for (i = [0 : 1 : n-1]) rands(minVal, maxVal, 3)];
+    
 voronoiObject();
