@@ -160,7 +160,7 @@ def get_faces_count_fitness(obj, min_faces, max_faces):
     faces_count = len(bm.faces)
     
     # If we exceed the max_faces with actual faces of the object, the fitness should be 0
-    if faces_count > max_faces:
+    if faces_count > max_faces or faces_count < min_faces:
         return 0
 
     # Calculate the range of faces counts
@@ -209,10 +209,8 @@ def get_bounding_box_volume_fitness(obj, min_volume, max_volume):
     # Calculate the bounding box volume for the given object
     volume = get_bounding_box_volume(obj)
 
-    if volume <= min_volume:
+    if volume < min_volume or volume > max_volume:
         return 0
-    if volume >= max_volume:
-        return 100
     
     # Normalize the volume to the range <0, 1>
     normalized_volume = (volume - min_volume) / (max_volume - min_volume)
@@ -248,8 +246,6 @@ def get_bounding_box_volume(obj):
 # Define the fitness function
 def fitness_function(params):
 
-    print("PARAMS: ", params)
-
     # Get the object
     object = get_all_objects_with_prefix(object_prefix)[0]
 
@@ -279,8 +275,8 @@ def fitness_function(params):
 
     # Calculate fitness values
     smoothness_fitness = get_surface_smoothness_fitness(object)
-    faces_count_fitness = get_faces_count_fitness(object, min_faces=20, max_faces=3000)
-    bounding_box_volume_fitness = get_bounding_box_volume_fitness(object, 0.1, 50000)
+    faces_count_fitness = get_faces_count_fitness(object, min_faces=4, max_faces=1200)
+    bounding_box_volume_fitness = get_bounding_box_volume_fitness(object, 0.5, 120)
 
     # Remove modified object and unhide its copy
     remove_object(object)
