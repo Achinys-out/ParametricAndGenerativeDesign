@@ -1,5 +1,4 @@
 # ParametricAndGenerativeDesign 
 
-This repository serves as a collection of parametreic and generative designs for Master's thesis about parametric and generative design for 3D modeling. 
-Collections consist of Tinkercad, OpenSCAD and OpenJSCAD codes that provide given designs.
-
+Tento repozitár slúži ako kolekcia parametrických a generatívnych dizajnov 3D modelov vytvorených v rámci diplomovej práce o parametrickom a generatívnom 3D modelovaní. 
+Kolekcia obsahuje implementácie objektov v OpenSCAD syntaxi (.scad) a v Python-e (.py) s použitím knižnice bpy, platypus,...
